@@ -6,6 +6,7 @@ public class Players : MonoBehaviour
 {
     private Rigidbody2D RB;
     [SerializeField] private int playerNumber;
+    [SerializeField] private Transform GroundCheck;
     private void Start()
     {
         RB = GetComponent<Rigidbody2D>();
@@ -13,6 +14,11 @@ public class Players : MonoBehaviour
 
     void Update()
     {
-        RB.velocity = new Vector2(10*Input.GetAxis("Horizontal"+ playerNumber),0);
+        float ySpeed = RB.velocity.y;
+        if (Input.GetButton("Vertical" + playerNumber))
+        {
+            ySpeed = 10;
+        }    
+        RB.velocity = new Vector2(10*Input.GetAxis("Horizontal"+ playerNumber),ySpeed);
     }
 }
