@@ -15,10 +15,12 @@ public class Players : MonoBehaviour
     void Update()
     {
         float ySpeed = RB.velocity.y;
-        if (Input.GetButton("Jump" + playerNumber))
+        RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position,Vector2.down,0.1f);
+        if (Input.GetButton("Jump" + playerNumber)&&hit.collider!=null)
         {
             ySpeed = 10;
         }    
         RB.velocity = new Vector2(10*Input.GetAxis("Horizontal"+ playerNumber),ySpeed);
+
     }
 }
