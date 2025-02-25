@@ -15,7 +15,7 @@ public class Players : MonoBehaviour
     void Update()
     {
         float ySpeed = RB.velocity.y;
-        if (Input.GetButton("Vertical" + playerNumber))
+        if (Input.GetButton("Jump" + playerNumber))
         {
             ySpeed = 10;
         }    
