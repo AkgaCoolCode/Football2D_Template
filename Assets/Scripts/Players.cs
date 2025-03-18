@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class Players : MonoBehaviour
 {
+
+    private Vector3 startPos;
+
     private Rigidbody2D RB;
     [SerializeField] private int playerNumber;
     [SerializeField] private Transform GroundCheck;
+
+
+
     private void Start()
     {
         RB = GetComponent<Rigidbody2D>();
     }
+
+
+    public void Reset()
+    {
+        transform.position = startPos;
+        RB.velocity = Vector2.zero;
+      
+    }
+
 
     void Update()
     {
