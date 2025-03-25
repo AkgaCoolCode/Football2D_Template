@@ -16,6 +16,7 @@ public class Goal : MonoBehaviour
         if (collision.TryGetComponent(out Football ball))
         {
             ball.Reset();
+            GameManager.Instance.Goal();
             Enemyscore = Enemyscore + 1;
             Enemyscoretext.text = Enemyscore.ToString();
         }

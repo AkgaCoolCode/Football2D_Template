@@ -16,6 +16,7 @@ public class Players : MonoBehaviour
     private void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        startPos = transform.position;
     }
 
 
