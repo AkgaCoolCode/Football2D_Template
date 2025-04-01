@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Football.unity
     guid: 86af0ff4b9cb3414caa0891ee2d58894
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 3cc0ee1e4c3905c45adec9f390892f08
   m_configObjects: {}

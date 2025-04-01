@@ -892,6 +892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLeft: {fileID: 1713791296}
   playerRight: {fileID: 811929422}
+  timerText: {fileID: 142908074}
 --- !u!4 &934363309
 Transform:
   m_ObjectHideFlags: 0
