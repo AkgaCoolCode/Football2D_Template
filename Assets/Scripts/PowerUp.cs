@@ -21,6 +21,7 @@ public class PowerUo : MonoBehaviour
     {
         if (collision.TryGetComponent(out Players player))
         {
+            Football.Instance.FireBall(player.EnemyGoal);
             Destroy(gameObject);
         }
                   

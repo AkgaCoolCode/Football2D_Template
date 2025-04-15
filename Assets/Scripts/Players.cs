@@ -5,6 +5,8 @@ using UnityEngine;
 public class Players : MonoBehaviour
 {
 
+    public Transform EnemyGoal;
+
     private Vector3 startPos;
 
     private Rigidbody2D RB;
