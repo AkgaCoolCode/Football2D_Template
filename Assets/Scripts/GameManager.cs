@@ -29,10 +29,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void Goal()
+    public void Reset()
     {
         playerLeft.Reset();
         playerRight.Reset();
+        Football.Instance.Reset();
     }
 
 

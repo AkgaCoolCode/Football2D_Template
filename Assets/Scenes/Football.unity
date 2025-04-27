@@ -2563,6 +2563,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1980544939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7803438418261655773, guid: 5e8f50746e642451195a457587219f27, type: 3}
+  m_PrefabInstance: {fileID: 2095216465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1981407164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,6 +2850,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6744353738410859967, guid: 5e8f50746e642451195a457587219f27, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744353738410859967, guid: 5e8f50746e642451195a457587219f27, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.50616175
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744353738410859967, guid: 5e8f50746e642451195a457587219f27, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8214859
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744353738410859967, guid: 5e8f50746e642451195a457587219f27, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7238803600834493625, guid: 5e8f50746e642451195a457587219f27, type: 3}
       propertyPath: goalUI
       value: 
@@ -2853,6 +2874,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1384071293}
+    - target: {fileID: 7704150932817431940, guid: 5e8f50746e642451195a457587219f27, type: 3}
+      propertyPath: goalText
+      value: 
+      objectReference: {fileID: 1980544939}
     - target: {fileID: 7704150932817431940, guid: 5e8f50746e642451195a457587219f27, type: 3}
       propertyPath: Enemyscoretext
       value: 

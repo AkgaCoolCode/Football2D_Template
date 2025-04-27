@@ -16,7 +16,7 @@ public class Football : MonoBehaviour
     {
         transform.position = startPos;
         rigidbody.velocity = Vector2.zero;
-        rigidbody.angularVelocity = 0;                                                                                                                                 
+        rigidbody.angularVelocity = 0;                                                                                                                       
     }
 
 
