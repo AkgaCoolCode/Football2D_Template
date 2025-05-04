@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUo : MonoBehaviour
+public enum PowerUpName
 {
-    // Start is called before the first frame update
+    Freeze,
+    FireBall,
+}
+
+public class PowerUp : MonoBehaviour
+{
+    [SerializeField] private PowerUpName powerName;
+   
     void Start()
     {
         
