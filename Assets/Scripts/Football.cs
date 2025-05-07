@@ -30,9 +30,9 @@ public class Football : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   private void OnCollisionEnter2D(Collision2D collision)
     {
-
+ 
         fireSpeed.SetActive(false);
 
     }

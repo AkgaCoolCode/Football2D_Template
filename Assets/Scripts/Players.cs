@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Players : MonoBehaviour
 {
+    
 
     public Transform EnemyGoal;
+
+    public Players enemyPlayer;
+
 
     private Vector3 startPos;
 
     private Rigidbody2D RB;
     [SerializeField] private int playerNumber;
     [SerializeField] private Transform GroundCheck;
+    [SerializeField] private GameObject iceCube;
 
+    public void Freeze()
+    {
+        iceCube.SetActive(true);
 
+    }
 
     private void Start()
     {
@@ -29,16 +38,21 @@ public class Players : MonoBehaviour
       
     }
 
-
+  
     void Update()
     {
-        float ySpeed = RB.velocity.y;
-        RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position,Vector2.down,0.1f);
-        if (Input.GetButton("Jump" + playerNumber)&&hit.collider!=null)
+
+        if (!iceCube.activeSelf)
         {
-            ySpeed = 10;
-        }    
-        RB.velocity = new Vector2(10*Input.GetAxis("Horizontal"+ playerNumber),ySpeed);
+            float ySpeed = RB.velocity.y;
+            RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position, Vector2.down, 0.1f);
+            if (Input.GetButton("Jump" + playerNumber) && hit.collider != null)
+            {
+                ySpeed = 10;
+            }
+            RB.velocity = new Vector2(10 * Input.GetAxis("Horizontal" + playerNumber), ySpeed);
+        }
+        
 
     }
 }

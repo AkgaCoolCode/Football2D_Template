@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7062197992110704882
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   EnemyGoal: {fileID: 0}
   playerNumber: 0
   GroundCheck: {fileID: 3958081625307871497}
+  iceCube: {fileID: 5124897437815377707}
 --- !u!50 &4880881272800203385
 Rigidbody2D:
   serializedVersion: 4

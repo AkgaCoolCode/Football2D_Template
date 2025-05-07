@@ -8,7 +8,7 @@ public enum PowerUpName
     FireBall,
 }
 
-public class PowerUp : MonoBehaviour
+public class PowerUp : MonoBehaviour 
 {
     [SerializeField] private PowerUpName powerName;
    
@@ -28,7 +28,18 @@ public class PowerUp : MonoBehaviour
     {
         if (collision.TryGetComponent(out Players player))
         {
-            Football.Instance.FireBall(player.EnemyGoal);
+            switch (powerName)
+            {
+                case PowerUpName.Freeze:
+                    player.enemyPlayer.Freeze();
+                    break;
+                case PowerUpName.FireBall:
+                    Football.Instance.FireBall(player.EnemyGoal);
+                    break;
+                default:
+                    break;
+            }
+            
             Destroy(gameObject);
         }
                   
