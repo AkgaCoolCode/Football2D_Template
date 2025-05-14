@@ -20,9 +20,16 @@ public class Players : MonoBehaviour
 
     public void Freeze()
     {
+        CancelInvoke(nameof(Unfreeze));
         iceCube.SetActive(true);
-
+        Invoke(nameof(Unfreeze),4);
     }
+
+    public void Unfreeze()
+    {
+        iceCube.SetActive(false);
+    }
+
 
     private void Start()
     {
@@ -33,6 +40,7 @@ public class Players : MonoBehaviour
 
     public void Reset()
     {
+        Unfreeze();
         transform.position = startPos;
         RB.velocity = Vector2.zero;
       
