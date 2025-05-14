@@ -11,15 +11,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Players playerLeft;
     [SerializeField] private Players playerRight;
     [SerializeField] private TMP_Text timerText;
-
-    private int timer = 100;
+    [SerializeField] private GameObject endMenu;
+    [SerializeField] private int timer = 100;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         InvokeRepeating(nameof(CountDown), 1, 1);
+        timerText.text = Helpers.FormatTimer(timer);
     }
 
     // Update is called once per frame
@@ -39,13 +41,15 @@ public class GameManager : MonoBehaviour
 
     private void CountDown()
     {
-        timer--;
         if (timer <= 0)
         {
-            SceneManager.LoadScene("EndGame");
+            endMenu.SetActive(true);
+            Time.timeScale = 0;
         }
-       
-        timerText.text = Helpers.FormatTimer(timer);
-
+        else
+        {
+            timer--;
+            timerText.text = Helpers.FormatTimer(timer);
+        }
     }
 }
