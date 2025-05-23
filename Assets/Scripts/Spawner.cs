@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject powerUp;
+    [SerializeField] private int cooldown = 9;
+    [SerializeField] private GameObject[] powerUps;
+    
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(SpawnPowerUp),9,9);
+        InvokeRepeating(nameof(SpawnPowerUp),   cooldown, cooldown);
     }
 
     private void SpawnPowerUp()
     {
-        Instantiate(powerUp, transform.position, transform.rotation);
+        Instantiate(powerUps[Random.Range(0,1)], transform.position, transform.rotation);
     }
 
     // Update is called once per frame
@@ -22,3 +24,4 @@ public class Spawner : MonoBehaviour
         
     }
 }
+
