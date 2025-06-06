@@ -46,6 +46,9 @@ public class Football : MonoBehaviour
         transform.up = transform.position - target.position;
     }
 
-
+    public void RoboMovement(Vector3 direction)
+    {
+        rigidbody.velocity = direction * 5;
+    }
      
 }

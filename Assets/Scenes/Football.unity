@@ -632,10 +632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63420d754e57954b920fa83e2cd8918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 9
+  cooldown: 0.1
   powerUps:
   - {fileID: 1346243493552151735, guid: 5dac62b4ad68e5245b5a1947d4a9d2e6, type: 3}
   - {fileID: 1346243493552151735, guid: baf3669ea0f45664fbbe9f80a357a3e5, type: 3}
+  - {fileID: 1346243493552151735, guid: 110831d28752b1b4cafc3e2e77052e07, type: 3}
 --- !u!4 &178686933
 Transform:
   m_ObjectHideFlags: 0

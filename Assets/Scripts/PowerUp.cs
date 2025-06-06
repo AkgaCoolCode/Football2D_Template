@@ -6,6 +6,7 @@ public enum PowerUpName
 {
     Freeze,
     FireBall,
+    RoboBall
 }
 
 public class PowerUp : MonoBehaviour 

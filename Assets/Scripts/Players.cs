@@ -18,6 +18,8 @@ public class Players : MonoBehaviour
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private GameObject iceCube;
 
+    private bool hasRoboBall = false;
+
     public void Freeze()
     {
         CancelInvoke(nameof(Unfreeze));
@@ -49,8 +51,13 @@ public class Players : MonoBehaviour
   
     void Update()
     {
-
-        if (!iceCube.activeSelf)
+        Vector2 input = new Vector2(Input.GetAxis("Horizantal" + playerNumber), Input.GetAxis("Verical" + playerNumber));
+        
+        if (hasRoboBall)
+        {
+            Football.Instance.RoboMovement(input);
+        }
+        else if (!iceCube.activeSelf)
         {
             float ySpeed = RB.velocity.y;
             RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position, Vector2.down, 0.1f);
@@ -58,7 +65,7 @@ public class Players : MonoBehaviour
             {
                 ySpeed = 10;
             }
-            RB.velocity = new Vector2(10 * Input.GetAxis("Horizontal" + playerNumber), ySpeed);
+            RB.velocity = new Vector2(10 * input.x, ySpeed);
         }
         
 
