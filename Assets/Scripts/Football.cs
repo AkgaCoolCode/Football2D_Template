@@ -11,7 +11,10 @@ public class Football : MonoBehaviour
 
     private Vector3 startPos;
     private Rigidbody2D rigidbody; 
-
+    public void ToggleRoboImage()
+    {
+        GetComponent<SpriteRenderer>().sprite=RoboImage;
+    }
     public void Reset()
     {
         transform.position = startPos;

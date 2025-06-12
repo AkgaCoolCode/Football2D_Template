@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Players : MonoBehaviour
 {
-    
+ 
+
 
     public Transform EnemyGoal;
 
@@ -20,6 +21,17 @@ public class Players : MonoBehaviour
 
     private bool hasRoboBall = false;
 
+    public void ActivateRoboBall()
+    {
+        hasRoboBall=true;
+        CancelInvoke(nameof(DeActivateRoboBall));
+        Invoke(nameof(DeActivateRoboBall), 4);
+    }
+    
+    private void DeActivateRoboBall()
+    {
+        hasRoboBall = false;
+    }
     public void Freeze()
     {
         CancelInvoke(nameof(Unfreeze));
@@ -27,7 +39,7 @@ public class Players : MonoBehaviour
         Invoke(nameof(Unfreeze),4);
     }
 
-    public void Unfreeze()
+    private void Unfreeze()
     {
         iceCube.SetActive(false);
     }
@@ -43,6 +55,7 @@ public class Players : MonoBehaviour
     public void Reset()
     {
         Unfreeze();
+        DeActivateRoboBall();
         transform.position = startPos;
         RB.velocity = Vector2.zero;
       
@@ -51,7 +64,7 @@ public class Players : MonoBehaviour
   
     void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizantal" + playerNumber), Input.GetAxis("Verical" + playerNumber));
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal" + playerNumber), Input.GetAxis("Vertical" + playerNumber));
         
         if (hasRoboBall)
         {

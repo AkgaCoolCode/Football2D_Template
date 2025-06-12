@@ -37,9 +37,15 @@ public class PowerUp : MonoBehaviour
                 case PowerUpName.FireBall:
                     Football.Instance.FireBall(player.EnemyGoal);
                     break;
-                default:
+                case PowerUpName.RoboBall:
+                    player.ActivateRoboBall();
                     break;
-            }
+
+                default:
+                    
+
+                    break;
+            }       
             
             Destroy(gameObject);
         }
