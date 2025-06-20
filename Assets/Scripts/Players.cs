@@ -24,6 +24,7 @@ public class Players : MonoBehaviour
     public void ActivateRoboBall()
     {
         hasRoboBall=true;
+        Football.Instance.ToggleRoboImage(true);
         CancelInvoke(nameof(DeActivateRoboBall));
         Invoke(nameof(DeActivateRoboBall), 4);
     }
@@ -31,6 +32,7 @@ public class Players : MonoBehaviour
     private void DeActivateRoboBall()
     {
         hasRoboBall = false;
+        Football.Instance.ToggleRoboImage(false);
     }
     public void Freeze()
     {

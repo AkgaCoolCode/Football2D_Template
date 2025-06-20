@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -8,18 +9,30 @@ public class Football : MonoBehaviour
     public static Football Instance; 
 
     [SerializeField] private GameObject fireSpeed;
+    [SerializeField] private Sprite roboImage;
 
     private Vector3 startPos;
-    private Rigidbody2D rigidbody; 
-    public void ToggleRoboImage()
+    private Rigidbody2D rb;
+    private Sprite footballImage;
+    private SpriteRenderer renderer;
+
+
+    public void ToggleRoboImage(bool isActive)
     {
-        GetComponent<SpriteRenderer>().sprite=RoboImage;
+        if (isActive)
+        {
+            renderer.sprite = roboImage;
+        }
+        else 
+        {
+            renderer.sprite = footballImage;
+        }
     }
     public void Reset()
     {
         transform.position = startPos;
-        rigidbody.velocity = Vector2.zero;
-        rigidbody.angularVelocity = 0;                                                                                                                       
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;                                                                                                                       
     }
 
 
@@ -28,7 +41,9 @@ public class Football : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        renderer = GetComponent<SpriteRenderer>();
+        footballImage = renderer.sprite;
         startPos = transform.position;
 
     }
@@ -45,13 +60,13 @@ public class Football : MonoBehaviour
     public void FireBall(Transform target)
     {
         fireSpeed.SetActive(true);
-        rigidbody.velocity = (target.position - transform.position).normalized * 75;
+        rb.velocity = (target.position - transform.position).normalized * 75;
         transform.up = transform.position - target.position;
     }
 
     public void RoboMovement(Vector3 direction)
     {
-        rigidbody.velocity = direction * 5;
+        rb.velocity = direction * 5;
     }
      
 }
